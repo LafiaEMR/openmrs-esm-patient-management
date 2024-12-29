@@ -12,6 +12,7 @@ import {
 } from '../helpers/helpers';
 import type { ConfigObject } from '../config-schema';
 import styles from './patient-queue-header.scss';
+import LafiaServiceQueuesPictogram from '../../public/lafia-service-queues-pictograms';
 
 interface PatientQueueHeaderProps {
   title?: string | JSX.Element;
@@ -73,7 +74,7 @@ const PatientQueueHeader: React.FC<PatientQueueHeaderProps> = ({ title, showLoca
     <PageHeader className={styles.header} data-testid="patient-queue-header">
       <PageHeaderContent
         title={title ? title : t(dashboardTitle.key, dashboardTitle.value)}
-        illustration={<ServiceQueuesPictogram />}
+        illustration={<LafiaServiceQueuesPictogram />}
       />
       <div className={styles.dropdownContainer}>
         {showLocationDropdown && (
