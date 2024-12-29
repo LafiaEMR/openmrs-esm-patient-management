@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import { ConfigurableLink } from '@openmrs/esm-framework';
 import { BrowserRouter, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import styles from './createDashboardLink.scss';
 
 export interface DashboardLinkConfig {
   name: string;
@@ -26,11 +27,9 @@ function DashboardExtension({ dashboardLinkConfig }: { dashboardLinkConfig: Dash
 
   return (
     <ConfigurableLink
-      className={classNames('cds--side-nav__link', {
-        'active-left-nav-link': navLink.match(name),
-      })}
+      className={`cds--side-nav__link ${navLink.match(name) ? styles.activeLeftNavLink : ''}`}
       to={`${spaBasePath}/${name}`}>
-      {t(title)}
+      <span className={navLink.match(name) ? styles.activeTitle : styles.inactiveTitle}>{t(name)}</span>
     </ConfigurableLink>
   );
 }
