@@ -4,6 +4,7 @@ import { Add } from '@carbon/react/icons';
 import { Button } from '@carbon/react';
 import { PageHeader, PageHeaderContent, PatientListsPictogram } from '@openmrs/esm-framework';
 import styles from './header.scss';
+import LafiaPatientListPictogram from '../../public/lafia-patient-list-pictograms';
 
 interface HeaderProps {
   handleShowNewListOverlay: () => void;
@@ -13,7 +14,7 @@ const Header: React.FC<HeaderProps> = ({ handleShowNewListOverlay }) => {
   const { t } = useTranslation();
   return (
     <PageHeader className={styles.header}>
-      <PageHeaderContent title={t('patientLists', 'Patient lists')} illustration={<PatientListsPictogram />} />
+      <PageHeaderContent title={t('patientLists', 'Patient lists')} illustration={<LafiaPatientListPictogram />} />
       <Button
         className={styles.newListButton}
         data-openmrs-role="New List"

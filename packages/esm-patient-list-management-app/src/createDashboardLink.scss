@@ -1,0 +1,36 @@
+@use '@carbon/styles/scss/type';
+@use '@openmrs/esm-styleguide/src/vars' as *;
+
+.activeLeftNavLink {
+  border-left: 0.25rem solid var(--brand-01);
+  background-color: #1160fe22;
+  outline: none;
+  padding: 0 0.75rem;
+}
+
+.activeIcon {
+  display: flex;
+  align-items: center;
+  * {
+    fill: #1161fe;
+  }
+  margin-left: -0.25rem;
+  margin-right: 8px;
+}
+
+.inactiveIcon {
+  display: flex;
+  align-items: center;
+  * {
+    fill: gray;
+  }
+  margin-right: 8px;
+}
+
+.activeTitle {
+  color: #1161fe;
+}
+
+.inactiveTitle {
+  color: black;
+}
