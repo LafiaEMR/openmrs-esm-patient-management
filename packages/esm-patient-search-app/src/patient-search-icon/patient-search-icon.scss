@@ -7,7 +7,21 @@
 }
 
 .searchIconButton {
-  @include brand-01(background-color);
+  background-color: white;
+  &:hover .searchIcon {
+    background-color: #ddd;
+  }
+  &:hover {
+    background-color: white;
+  }
+}
+
+.searchIcon {
+  padding: 10%;
+  background-color: #eee;
+  * {
+    fill: black;
+  }
 }
 
 .activeSearchIconButton {

@@ -15,7 +15,7 @@ export default function Root() {
       name="AddPatientIcon"
       onClick={addPatient}
       className={styles.slotStyles}>
-      <UserFollow size={20} />
+      <UserFollow size={30} className={styles.addPatientIcon} />
     </HeaderGlobalAction>
   );
 }

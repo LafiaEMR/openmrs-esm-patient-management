@@ -7,6 +7,7 @@ import { omrsDateFormat } from '../constants';
 import { useAppointmentServices } from '../hooks/useAppointmentService';
 import SelectedDateContext from '../hooks/selectedDateContext';
 import styles from './appointments-header.scss';
+import LafiaAppointmentsPictogram from '../../public/lafia-appointments-pictograms';
 
 interface AppointmentHeaderProps {
   title: string;
@@ -21,7 +22,7 @@ const AppointmentsHeader: React.FC<AppointmentHeaderProps> = ({ title, appointme
 
   return (
     <PageHeader className={styles.header} data-testid="appointments-header">
-      <PageHeaderContent illustration={<AppointmentsPictogram />} title={title} />
+      <PageHeaderContent illustration={<LafiaAppointmentsPictogram />} title={title} />
       <div className={styles.rightJustifiedItems}>
         <DatePicker
           dateFormat="d-M-Y"

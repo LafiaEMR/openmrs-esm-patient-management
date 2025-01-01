@@ -1,3 +1,17 @@
 .slotStyles {
-  background-color: transparent;
+  background-color: white;
+  &:hover .addPatientIcon {
+    background-color: #ddd;
+  }
+  &:hover {
+    background-color: white;
+  }
+}
+
+.addPatientIcon {
+  padding: 10%;
+  background-color: #eee;
+  * {
+    fill: black;
+  }
 }

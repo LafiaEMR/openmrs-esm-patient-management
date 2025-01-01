@@ -101,12 +101,12 @@ const PatientSearchLaunch: React.FC<PatientSearchLaunchProps> = () => {
           <div className={styles.closeButton}>
             <HeaderGlobalAction
               aria-label={t('closeSearch', 'Close Search Panel')}
-              className={styles.activeSearchIconButton}
+              className={styles.searchIconButton}
               data-testid="closeSearchIcon"
               enterDelayMs={500}
               name="CloseSearchIcon"
               onClick={closePatientSearch}>
-              <Close size={20} />
+              <Close size={30} className={styles.searchIcon} />
             </HeaderGlobalAction>
           </div>
         </>
@@ -128,7 +128,7 @@ const PatientSearchLaunch: React.FC<PatientSearchLaunchProps> = () => {
                 void preload(`${restBaseUrl}/user/${userUuid}`, openmrsFetch);
               }
             }}>
-            <Search size={20} />
+            <Search size={30} className={styles.searchIcon} />
           </HeaderGlobalAction>
         </div>
       )}

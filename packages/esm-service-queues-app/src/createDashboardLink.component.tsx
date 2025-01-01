@@ -3,6 +3,8 @@ import classNames from 'classnames';
 import { BrowserRouter, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { ConfigurableLink } from '@openmrs/esm-framework';
+import styles from './createDashboardLink.scss';
+import LafiaServiceQueuesIcon from '../public/lafia-service-queues-icon';
 
 export interface DashboardLinkConfig {
   name: string;
@@ -23,11 +25,14 @@ function DashboardExtension({ dashboardLinkConfig }: { dashboardLinkConfig: Dash
 
   return (
     <ConfigurableLink
-      className={classNames('cds--side-nav__link', {
-        'active-left-nav-link': navLink.match(name),
-      })}
+      className={`cds--side-nav__link ${navLink.match(name) ? styles.activeLeftNavLink : ''}`}
       to={`${spaBasePath}/${name}`}>
-      {t('serviceQueues', 'Service queues')}
+      <div className={navLink.match(name) ? styles.activeIcon : styles.inactiveIcon}>
+        <LafiaServiceQueuesIcon />
+      </div>
+      <span className={navLink.match(name) ? styles.activeTitle : styles.inactiveTitle}>
+        {t('serviceQueues', 'Service queues')}
+      </span>
     </ConfigurableLink>
   );
 }
